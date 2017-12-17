@@ -10,6 +10,10 @@
       width: 100vw !important;
       background: #DDD;
       padding: 0;
+      -webkit-user-select: none;  /* Chrome all / Safari all */
+      -moz-user-select: none;     /* Firefox all */
+      -ms-user-select: none;      /* IE 10+ */
+      user-select: none;
     }
 
     * {
@@ -18,9 +22,9 @@
     }
 
     button {
-              border: 1px solid black;
-              padding: 5px;
-              font-size: 20px;
+	  border: 1px solid black;
+      padding: 5px;
+      font-size: 20px;
     }
 
     canvas {
@@ -36,6 +40,6 @@
   <script src="../p5/addons/p5.dom.min.js"></script>
   <script src="../p5/addons/p5.sound.min.js"></script>
 </head>
-<body>
+<body oncontextmenu="return false;">
 </body>
 </html>
