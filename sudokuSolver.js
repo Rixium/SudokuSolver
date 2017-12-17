@@ -317,11 +317,19 @@ var wasUp = true;
 function mousePressed() {
   if(currBlock != null && wasUp) {
     activeCell = currBlock;
-    if(currBlock.number < 9) {
-      currBlock.number++;
-    } else {
-      currBlock.number = 0;
-    }
+	if (mouseButton == LEFT) {
+		if(currBlock.number < 9) {
+		  currBlock.number++;
+		} else {
+		  currBlock.number = 0;
+		}
+	} else if (mouseButton == RIGHT) {
+		if(currBlock.number > 0) {
+		  currBlock.number--;
+		} else {
+		  currBlock.number = 9;
+		}
+	}
     wasUp = false;
   }
 }
