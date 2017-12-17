@@ -12,28 +12,16 @@ function setup() {
   var canvas = createCanvas(800, 800);
   background(51);
 
-  textAlign(CENTER);
-  textSize(24);
-  fill(255);
-  text("Input width of sudoku:", width / 2, height / 2 - 30);
-
-  input = createInput();
-  input.position(windowWidth / 2 - input.width / 2, windowHeight / 2);
-
-  button = createButton("Create SUDOKU");
-  button.position(windowWidth / 2 - button.width / 2, windowHeight / 2 + 10 + button.height);
-  button.mousePressed(start);
+  start();
 }
 
 function start() {
   clear();
   background(51);
-  var numOfBlocks = parseInt(input.value());
+  var numOfBlocks = 3;
   boardWidth = numOfBlocks;
   var boardHeight = numOfBlocks;
   createSudoku(boardWidth, boardHeight);
-  button.hide();
-  input.hide();
 }
 
 function cellBlock(x, y, xPos, yPos, size, index) {
@@ -59,7 +47,6 @@ window.onresize = function(event) {
 var cellBlocks = [];
 var currIndex = 0;
 var ready = false;
-
 
 
 function createSudoku(width, height) {
